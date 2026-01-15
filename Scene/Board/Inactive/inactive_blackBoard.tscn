@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcuap2cww6few"]
+
+[ext_resource type="Texture2D" uid="uid://bq6plc6my3xo0" path="res://Sprite/Board/Board.png" id="1_wv4eq"]
+
+[node name="InactiveBlackBoard" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wv4eq")

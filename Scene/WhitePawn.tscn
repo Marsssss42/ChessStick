@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1r8gf4eh03ua"]
+
+[ext_resource type="Texture2D" uid="uid://di1h1nhgjdyf8" path="res://Sprite/Pawn/Pawn_White_Idle.png" id="1_p65rb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jod6"]
+atlas = ExtResource("1_p65rb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05rr4"]
+atlas = ExtResource("1_p65rb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnj4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jod6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05rr4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="WhitePawn" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lnj4w")
+animation = &"idle"

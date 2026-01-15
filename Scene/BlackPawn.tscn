@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhvbnupmnmefc"]
+
+[ext_resource type="Texture2D" uid="uid://bbw325y0rl1bn" path="res://Sprite/Pawn/Pawn_Black_Idle.png" id="1_r0qg5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq6ib"]
+atlas = ExtResource("1_r0qg5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfe2f"]
+atlas = ExtResource("1_r0qg5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04nvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq6ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfe2f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="BlackPawn" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_04nvq")
+animation = &"idle"
