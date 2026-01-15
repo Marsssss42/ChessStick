@@ -24,6 +24,14 @@ func generate_board():
 	var board_pixel_height = grid_height * tile_size
 	position = Vector2(-board_pixel_width / 2, -board_pixel_height / 2)
 	
+	center_camera()
+	
+
+# If using a Camera2D as a child of GameBoard
+func center_camera():
+	var board_center_x = (grid_width * tile_size) / 2
+	var board_center_y = (grid_height * tile_size) / 2
+	$Camera2D.position = Vector2(board_center_x, board_center_y)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
