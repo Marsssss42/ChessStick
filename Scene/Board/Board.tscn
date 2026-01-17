@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ta5rh8vhxtqu"]
+[gd_scene load_steps=6 format=3 uid="uid://ta5rh8vhxtqu"]
 
 [ext_resource type="Script" path="res://Script/board.gd" id="1_4o2ym"]
 [ext_resource type="PackedScene" uid="uid://d4i4r31fse5y4" path="res://Scene/Board/Inactive/inactive_whiteBoard.tscn" id="2_7pwu7"]
 [ext_resource type="PackedScene" uid="uid://bcuap2cww6few" path="res://Scene/Board/Inactive/inactive_blackBoard.tscn" id="3_t22mb"]
+[ext_resource type="PackedScene" uid="uid://bhvbnupmnmefc" path="res://Scene/BlackPawn.tscn" id="4_nxh3q"]
+[ext_resource type="PackedScene" uid="uid://d1r8gf4eh03ua" path="res://Scene/WhitePawn.tscn" id="5_s05d7"]
 
 [node name="Board" type="Node2D"]
 script = ExtResource("1_4o2ym")
 white_tile_scene = ExtResource("2_7pwu7")
 black_tile_scene = ExtResource("3_t22mb")
+black_pawn = ExtResource("4_nxh3q")
+white_pawn = ExtResource("5_s05d7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
