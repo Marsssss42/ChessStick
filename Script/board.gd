@@ -5,8 +5,8 @@ extends Node2D
 @export var tile_size: int = 32
 @export var white_tile_scene: PackedScene = get("res://Scene/Board/Inactive/inactive_whiteBoard.tscn")
 @export var black_tile_scene: PackedScene = get("res://Scene/Board/Inactive/inactive_blackBoard.tscn")
-@export var black_pawn = "res://Scene/BlackPawn.tscn"
-@export var white_pawn = "res://Scene/WhitePawn.tscn"
+@export var black_pawn: PackedScene = get("res://Scene/BlackPawn.tscn")
+@export var white_pawn: PackedScene = get("res://Scene/WhitePawn.tscn")
 
 func generate_board():
 	var new_tile
@@ -24,6 +24,7 @@ func generate_board():
 	var board_pixel_height = grid_height * tile_size
 	position = Vector2(-board_pixel_width / 2, -board_pixel_height / 2)
 	
+	
 	center_camera()
 	
 
@@ -33,10 +34,25 @@ func center_camera():
 	var board_center_y = (grid_height * tile_size) / 2
 	$Camera2D.position = Vector2(board_center_x, board_center_y)
 
+func spawn_piece(grid_x: int, grid_y: int, piece: PackedScene):
+	if piece:
+		var new_piece = piece.instantiate()
+		add_child(new_piece)
+		
+		new_piece.position = Vector2(grid_x * tile_size, grid_y * tile_size)
+		
+		# Optional: Identify the piece's grid coordinate for later logic
+		# new_piece.grid_pos = Vector2i(grid_x, grid_y)
+		
+func starting_piece():
+	for x in range(grid_width):
+		spawn_piece(x, 1, black_pawn)
+		spawn_piece(x, 6, white_pawn)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	generate_board() # Replace with function body.
-
+	starting_piece()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
