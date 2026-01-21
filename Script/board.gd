@@ -7,6 +7,9 @@ extends Node2D
 @export var black_tile_scene: PackedScene = get("res://Scene/Board/Inactive/inactive_blackBoard.tscn")
 @export var black_pawn: PackedScene = get("res://Scene/BlackPawn.tscn")
 @export var white_pawn: PackedScene = get("res://Scene/WhitePawn.tscn")
+@export var activeWhite_tile: PackedScene
+@export var activeBlack_tile: PackedScene
+
 
 func generate_board():
 	var new_tile

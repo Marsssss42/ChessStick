@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmkuvbw0qwq66"]
+
+[ext_resource type="Texture2D" uid="uid://bq6plc6my3xo0" path="res://Sprite/Board/Board.png" id="1_lb4pd"]
+
+[node name="ActiveWhiteBoard" type="Sprite2D"]
+texture = ExtResource("1_lb4pd")
+hframes = 2
+vframes = 2
+frame = 3
